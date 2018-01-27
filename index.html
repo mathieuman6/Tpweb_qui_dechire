@@ -17,18 +17,49 @@
     </head>
     <body>
       <header>
-        <img src="img/logo-bonne_bouffe.png" class="logo" alt="logo">
-      </br>
-        <nav>
-          <a href="/html/">Home</a>
-          <a href="/css/">List</a>
-          <a href="/js/">Manager</a>
-        </nav>
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <img src="img/logo-bonne_bouffe.png" class="logo" alt="logo">
+          </br>
+            <nav>
+              <a href="/html/">Home</a> /
+              <a href="/css/">List</a> /
+              <a href="/js/">Manager</a>
+            </nav>
+          </div>
+          <div class="column"></div>
+          <div class="column">
+                <button class="button is-link" class="admin">admin</button>
+          </div>
+        </div>
+
       </header>
-      <section class="hero is-light">
+      <section class="hero is-primary">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              Miam !
+            </h1>
+            <h2 class="subtitle">
+              Hum' que c'est bon !
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero is-light" style="border-bottom-style: solid;border-bottom-width: 0px;padding-bottom: 1%;">
         <div class="container has-text-centered">
-          <h1 class="title">hum' que c'est bon</h1>
-        <p> lorem ipsum</p>
+          <h1 class="title">Recherche une recette</h1>
+          <div class="field has-addons" style="padding-left: 35%;">
+            <div class="control">
+              <input class="input" type="text" placeholder="Find a repository">
+            </div>
+            <div class="control">
+              <a class="button is-info">
+                Search
+              </a>
+            </div>
+          </div>
 
       </section>
         <!--[if lte IE 9]>

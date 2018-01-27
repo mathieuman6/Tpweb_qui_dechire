@@ -101,6 +101,15 @@ header {
   height:  4em;
 }
 
+.admin {
+float: right;
+}
+
+.nav {
+  display: block;
+  float: center;
+}
+
 .logo {
   width: 100px;
   float: left;
@@ -116,10 +125,12 @@ nav {
 
 nav ul li
 {
- margin:0 10px;
+ margin:0 30px;
 }
 
-
+header {
+  height: 80px;
+}
 
 
 

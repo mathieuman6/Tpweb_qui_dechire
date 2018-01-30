@@ -54,6 +54,12 @@ hr {
     padding: 0;
 }
 
+.descriptif{
+  text-align: center;
+}
+.button {
+  float: center;
+}
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:

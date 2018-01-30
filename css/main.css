@@ -60,6 +60,23 @@ hr {
 .button {
   float: center;
 }
+
+.BN {
+  widht: 30%;
+}
+
+.kebabLMR {
+  height: 15em;
+}
+
+.title.is-3 {
+  font-size: 2rem;
+  margin-top: 1em;
+}
+
+.recette {
+
+}
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:

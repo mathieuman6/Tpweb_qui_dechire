@@ -21,6 +21,32 @@ h1
     font-family: verdana;
 }
 
+footer {
+	padding: 30px 30px;
+	margin-top: 100px;
+	height: 200px;
+	background-color: #222;
+	color: #FFF;
+}
+
+.pfooter {
+	position: relative;
+	display: block; 
+	margin-left: 35%;
+	 
+	
+}
+	
+.social_media {
+	position: relative;
+	display: block; 
+	margin-left: 35%;
+	margin-bottom: 40px;
+}
+
+
+
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301

@@ -65,9 +65,11 @@
       <section class="recette">
         <h1 class="title is-1" > Kebab : La meilleur recette</h1>
         <img class="kebabLMR" src="img/kebabLMR.jpg" alt="kebab">
-        <h2 class="title is-3">ingredient <strong>/ pour <input id="number" type="number" class="BN"> personnes</strong></h2>
+        <h2 class="title is-3">ingredient <strong>/ pour <input class="nbpers" type="text" id="ligne1_colonne1"/> personnes</strong></h2>
+
         <p>
-          - 4 faluches pittas ou crêpes libanaises</br>
+           <input type="hidden" class="ingre" type="text" name="country" value="4" readonly id="ligne1_colonne2"></br>
+          - <input class="ingre" type="text" id="somme1"/> faluches pittas ou crêpes libanaises</br>
           - 1 kg d’escalopes de dinde ou poulet ou encore veau</br>
           - 200 à 250 g de fromage blanc nature (pour la sauce blanche)</br>
           - 1 à 2 jus de citron selon le goût</br>
@@ -102,6 +104,55 @@
           <strong>Pour finir</strong></br>
           Poser les crêpes à plat ou alors fendre légèrement les faluches, puis tartiner le fond avec une couche de sauce blanche, puis ajouter les morceaux de laitue, les morceaux de tomates, puis les morceaux d'oignons parsemés. Ajouter la viande cuite sur cela et arroser d'une couche de sauce. Refermer les crêpes avec un cure-dent piqué dans les bords relevés.
         </p>
+
+        <script>
+        /**
+         * Initialise le champ d’id sommei avec la somme des champs de la même ligne
+         * @param ligne numéro de la ligne
+         */
+        function somme(ligne) {
+        	"use strict";
+        	var sommeRes = 1, colonne, NB_COLONNES = 2;
+
+        	// On va calculer la somme de la ligne dans sommeRes
+        	for (colonne = 1; colonne <= NB_COLONNES; colonne += 1) {
+        		sommeRes *= parseFloat(document.getElementById("ligne" + ligne + "_colonne" + colonne).value);
+        	}
+
+        	// Si la sommeRes n’est pas définie on ne l’affiche pas.
+        	if (isNaN(sommeRes)) {
+        		sommeRes = "";
+        	}
+        	document.getElementById("somme" + ligne).value = sommeRes;
+        }
+
+        window.onload = function () {
+        	"use strict";
+
+        	// Ici on est sur que toute la page est chargée. On peut travailler tranquille.
+
+        	// Ne pas faire de boucles pour définir les onchange. (On pourrait les définir dans le code html mais il vaut mieux séparer le javascript du contenu.
+        	document.getElementById("ligne1_colonne1").onchange = function () {
+        		somme(1);
+        	};
+        	document.getElementById("ligne1_colonne2").onchange = function () {
+        		somme(1);
+        	};
+        	document.getElementById("ligne2_colonne1").onchange = function () {
+        		somme(2);
+        	};
+        	document.getElementById("ligne2_colonne2").onchange = function () {
+        		somme(2);
+        	};
+        };
+
+        </script>
+
+
+
+
+
+
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>

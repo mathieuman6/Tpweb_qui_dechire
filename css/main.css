@@ -31,15 +31,15 @@ footer {
 
 .pfooter {
 	position: relative;
-	display: block; 
+	display: block;
 	margin-left: 35%;
-	 
-	
+
+
 }
-	
+
 .social_media {
 	position: relative;
-	display: block; 
+	display: block;
 	margin-left: 35%;
 	margin-bottom: 40px;
 }
@@ -100,8 +100,20 @@ hr {
   margin-top: 1em;
 }
 
-.recette {
+.ingre
+{
+height: 30px;
+width: 50px;
+}
 
+.nbpers
+{
+height: 40px;
+width: 70px;
+}
+
+.recette {
+ margin-left: 40px;
 }
 /*
  * Remove the gap between audio, canvas, iframes,

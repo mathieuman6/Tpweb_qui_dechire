@@ -9,7 +9,7 @@
 
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="img/logo-bonne_bouffe.png">
-        <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/bulma.css">
@@ -69,27 +69,19 @@
       <section class="guillaume">
         <div class="columns">
           <div class="column">
-            <h2 class="title is-3">ingredient <strong>/ pour <input class="nbpers" type="text" id="ligne1_colonne1" class="ligne2_colonne1"/> personnes</strong></h2>
+            <h2 class="title is-3">ingredient pour <span class="minus-button glyphicon glyphicon-minus-sign"></span><span class="nbpers">1</span><span class="plus-button glyphicon glyphicon-plus-sign"></span> personnes</h2>
 
-            <p>
-               <input type="hidden" class="ingre" type="text" name="ingredient-pour-1" value="4" readonly id="ligne1_colonne2">
-              - <input class="ingre" type="text" id="somme1"/> faluches pittas ou crêpes libanaises</br>
-              <input type="hidden" class="ingre" type="text" name="ingredient-pour-1" value="25" readonly id="ligne2_colonne2">
-              - <input class="ingre" type="text" id="somme2"/> kg d’escalopes de dinde ou poulet ou encore veau</br>
-              - 200 à 250 g de fromage blanc nature (pour la sauce blanche)</br>
-              - 1 à 2 jus de citron selon le goût</br>
-              - 2 tomates</br>
-              - quelques feuilles de laitues selon le nombre de kebabs</br>
-              - 1 oignon</br>
-              - ail en poudre</br>
-              - sel et poivre</br>
-              - persil</br>
-              - vinaigre</br>
-              - paprika</br>
-              - curry</br>
-              - gingembre moulu</br>
-              - herbes de Provence</br>
-              - huile d'olive (150ml)</br>
+            <p><span class="quantity">190</span> g de gigot d'agneau désossé</p>
+            <p><span class="quantity">1/4</span> oignon râpé</p>
+            <p><span class="quantity">1/4</span> cuillère à café de paprika </p>
+            <p><span class="quantity">1/4</span> cuillère à café de cumin moulu</p>
+            <p><span class="quantity">1/2</span> cuillère à soupe de persil plat ciselé</p>
+            <p><span class="quantity">1.5</span> cl d'huile d'olive </p>
+            <p>Poivre</p>
+            <p>sel</p>
+              
+              
+              
             </p>
           </div>
           <div class="column">
@@ -113,48 +105,6 @@
             </p>
         </div>
 
-        <script>
-        /**
-         * Initialise le champ d’id sommei avec la somme des champs de la même ligne
-         * @param ligne numéro de la ligne
-         */
-        function somme(ligne) {
-        	"use strict";
-        	var sommeRes = 1, colonne, NB_COLONNES = 2;
-
-        	// On va calculer la somme de la ligne dans sommeRes
-        	for (colonne = 1; colonne <= NB_COLONNES; colonne += 1) {
-        		sommeRes *= parseFloat(document.getElementById("ligne" + ligne + "_colonne" + colonne).value);
-        	}
-
-        	// Si la sommeRes n’est pas définie on ne l’affiche pas.
-        	if (isNaN(sommeRes)) {
-        		sommeRes = "";
-        	}
-        	document.getElementById("somme" + ligne).value = sommeRes;
-        }
-
-        window.onload = function () {
-        	"use strict";
-
-        	// Ici on est sur que toute la page est chargée. On peut travailler tranquille.
-
-        	// Ne pas faire de boucles pour définir les onchange. (On pourrait les définir dans le code html mais il vaut mieux séparer le javascript du contenu.
-        	document.getElementById("ligne1_colonne1").onchange = function () {
-        		somme(1);
-        	};
-        	document.getElementById("ligne1_colonne2").onchange = function () {
-        		somme(1);
-        	};
-        	document.getElementById("ligne2_colonne1").onchange = function () {
-        		somme(2);
-        	};
-        	document.getElementById("ligne2_colonne2").onchange = function () {
-        		somme(2);
-        	};
-        };
-
-        </script>
 
 
 

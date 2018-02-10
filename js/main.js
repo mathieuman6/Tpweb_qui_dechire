@@ -7,27 +7,59 @@ function pgcd(a,b) { // a>0, b>0
   } while (b>0);  
   return a;  
 }
+function plus_button(){
+    $quantities = $(".quantity");
+    $val = $(".nbpers")[0].innerHTML;
+    $val = Number($val);
 
-function plus-button(){    
-    $quantities = $('.quantity');
-    $.each($quantities,function(key, quant){
-        quant_val = quant.innerHTML;
-        $val = $('.nbpers')[0].innerHTML;
-        $val = Number($val);
-        if (/\//i.test(quant_val)){
-            var nums = quant_val.split("/");
-            nums[0] += nums[0];
-            $pgd = pgcd(nums[0],nums[1]);
-            $val1 = nums[0]/$pgd;
-            $val2 = nums[1]/$pgd;
-            $ret_val = $val1.toString()+"/"+$val2.toString();
-            quant.innerHTML = $ret_val;
-        }
-        else{
-            nums[0] += nums[0];
-        }
-    });
+    if($val<15){
+	    $.each($quantities,function(key, quant){
+		    if(quant.firstChild.value==null)
+			var quant_val = quant.firstChild.data;
+		    else
+			var quant_val = quant.firstChild.value;
+		    var nums = Number(quant_val);
+		    var ty = quant.childNodes[key+1];
+		    nums += nums/$val;
+		    if (nums>=1000 && ty!=null){
+			nums = nums/1000;
+			if (ty.innerHTML=="g")
+			    ty.innerHTML = "kg";
+		    }
+		    quant.firstChild.value = nums;
+		    nums = Math.round(nums*100)/100;
+		    quant.firstChild.data = nums.toString(); 
+	    });
+	    $(".nbpers")[0].innerHTML = ($val+1).toString();
+    }
 }
 
+function minus_button(){
+    $quantities = $(".quantity");
+    $val = $(".nbpers")[0].innerHTML;
+    $val = Number($val);
 
-$('.plus-button')[0].addEventListener('click',plus-button,false);
+    if($val>1){
+	    $.each($quantities,function(key, quant){
+		    if(quant.firstChild.value==null)
+			var quant_val = quant.firstChild.data;
+		    else
+			var quant_val = quant.firstChild.value;
+		    var nums = Number(quant_val);
+		    var ty = quant.childNodes[key+1];
+		    nums -= nums/$val;
+		    if (nums<1 && ty!=null){
+			nums = nums*1000;
+			if (ty.innerHTML=="kg")
+			    ty.innerHTML = "g";
+		    }
+		    quant.firstChild.value = nums;
+		    nums = Math.round(nums*100)/100;
+		    quant.firstChild.data = nums.toString(); 
+	    });
+	    $(".nbpers")[0].innerHTML = ($val-1).toString();
+    }
+}
+
+$(".plus-button")[0].addEventListener("click",plus_button,false);
+$(".minus-button")[0].addEventListener("click",minus_button,false);

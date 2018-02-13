@@ -1,0 +1,62 @@
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>somme</title>
+</head>
+<body>
+	<input type="text" id="ligne1_colonne1"/><input type="text" id="ligne1_colonne2"/><input type="text" id="somme1"/><br/>
+	<input type="text" id="ligne2_colonne1"/><input type="text" id="ligne2_colonne2"/><input type="text" id="somme2"/><br/>
+	<script type="text/javascript" src="somme.js"></script>
+</body>
+</html>
+
+
+
+
+
+<script>
+/**
+ * Initialise le champ d’id sommei avec la somme des champs de la même ligne
+ * @param ligne numéro de la ligne
+ */
+function somme(ligne) {
+	"use strict";
+	var sommeRes = 1, colonne, NB_COLONNES = 2;
+
+	// On va calculer la somme de la ligne dans sommeRes
+	for (colonne = 1; colonne <= NB_COLONNES; colonne += 1) {
+		sommeRes = parseFloat(document.getElementById("ligne" + ligne + "_colonne" + colonne).value);
+	}
+
+	// Si la sommeRes n’est pas définie on ne l’affiche pas.
+	if (isNaN(sommeRes)) {
+		sommeRes = "";
+	}
+	document.getElementById("somme" + ligne).value = sommeRes;
+}
+
+window.onload = function () {
+	"use strict";
+
+	// Ici on est sur que toute la page est chargée. On peut travailler tranquille.
+
+	// Ne pas faire de boucles pour définir les onchange. (On pourrait les définir dans le code html mais il vaut mieux séparer le javascript du contenu.
+	document.getElementById("ligne1_colonne1").onchange = function () {
+		somme(1);
+	};
+	document.getElementById("ligne1_colonne2").onchange = function () {
+		somme(1);
+	};
+	document.getElementById("ligne2_colonne1").onchange = function () {
+		somme(2);
+	};
+	document.getElementById("ligne2_colonne2").onchange = function () {
+		somme(2);
+	};
+};
+
+</script>

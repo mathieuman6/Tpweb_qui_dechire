@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS ingredient;
+CREATE TABLE ingredient(
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(30) NOT NULL
+);
+DROP TABLE IF EXISTS recette;
+CREATE TABLE recette(
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	description TEXT NOT NULL
+);
+DROP TABLE IF EXISTS ingredient_recette;
+CREATE TABLE ingredient_recette(
+	id_ingredient INT(6) UNSIGNED NOT NULL,
+	id_recette INT(6) UNSIGNED NOT NULL,
+	quantity INTEGER(6) NOT NULL
+);

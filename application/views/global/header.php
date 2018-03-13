@@ -38,7 +38,7 @@
         <div class="hero-body">
           <div class="container">
             <h1 class="title">
-              <?= $pageTitle ?>
+              <?php var_dump ($pageTitle) ?>
             </h1>
             <h2 class="subtitle">
               Hum' que c'est bon !

@@ -73,6 +73,11 @@
         </div>
       </div>
       </section>
+      <section class=margeForm style="margin-bottom: 3%;">
+        <label class="label" style="margin-left: -40%;">Mettre une image</label>
+        <input type="file" style="width:30%; margin-left: 7%;">
+
+      </section>
       <section class="margeForm">
        	<p style="margin-bottom:2%; margin-left: 5%;"><i class="fa fa-warning">Les quantités de votre recette doivent être adapté pour une personne </i></p>
 
@@ -163,15 +168,15 @@
   </section>
 
   </section>
-  <section class="formul" style="margin-left: 20%; margin-top: -35px;"">
+  <section class="formul" style="margin-left: 20%; margin-top: -35px;">
   <div class="columns is-mobile">
     <div class="column is-11 is-offset-1">
 <div class="field is-grouped">
 <div class="control">
-  <button class="button is-link">Submit</button>
+  <button class="button is-link">Partager</button>
 </div>
 <div class="control">
-  <button class="button is-text">Cancel</button>
+  <button class="button is-text">Retour</button>
 </div></div></div>
 </div>
 </section>

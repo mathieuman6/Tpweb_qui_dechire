@@ -9,6 +9,14 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+   .formul{
+     float: left;
+   }
+
+   .margeForm{
+     margin-left: 5%;
+     margin-bottom: 5em;
+   }
 
 html {
     color: #222;

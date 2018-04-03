@@ -13,150 +13,46 @@
     </div>
 
 </section>
+
 <section>
   <div class="columns" style="padding-top: 2%;padding-left: 3%;padding-right: 3%;">
+  <?php
+  $nbrecettes=0;
+  foreach ($recipes as $recipe):
+  ?>
+  <?php
+  $nbrecettes++;
+  if($nbrecettes%4==0){
+    echo '</div></section><div class="columns" style="padding-top: 2%;padding-left: 3%;padding-right: 3%;">';
+    $nbrecettes++;
+  }
+  ?>
     <div class="column">
-      <div class="card">
+      <div class="card" style="max-width:300px;min-height:455px">
         <div class="card-image">
           <figure class="image is-4by3">
-            <a href="#"><img src="assets/img/kebab.jpg" alt="kebab"></a>
+            <a href="../../../../Tpweb_qui_dechire-master/recipe/<?php echo str_replace(' ','_',$recipe->name) ?>"><img src="assets/img/kebab.jpg" alt="kebab"></a>
           </figure>
         </div>
         <div class="card-content">
           <div class="media">
             <div class="media-content">
-              <p class="title is-4">descriptif de la recette</p>
+              <p class="title is-4 is-warning">
+                  <?php echo str_replace('_',' ',$recipe->name) ?>
+              </p>
             </div>
           </div>
 
           <div class="content">
-            In vitae augue purus. In ullamcorper interdum vulputate. In ornare velit eros. Maecenas quis augue ac augue gravida placerat eu a ligula. Vestibulum est elit, tristique quis venenatis a.
+            <?php echo substr($recipe->text,0,200); ?>
           </div>
-          <a class="button is-warning">
-            Ma recette 1
-          </a>
         </div>
       </div>
     </div>
-    <div class="column">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <a href="#"><img src="assets/img/kebab.jpg" alt="kebab"></a>
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">descriptif de la recette</p>
-            </div>
-          </div>
-
-          <div class="content">
-            In vitae augue purus. In ullamcorper interdum vulputate. In ornare velit eros. Maecenas quis augue ac augue gravida placerat eu a ligula. Vestibulum est elit, tristique quis venenatis a.
-          </div>
-          <a class="button is-warning">
-            Ma recette 2
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <a href="#"><img src="assets/img/kebab.jpg" alt="kebab"></a>
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">descriptif de la recette</p>
-            </div>
-          </div>
-
-          <div class="content">
-            In vitae augue purus. In ullamcorper interdum vulputate. In ornare velit eros. Maecenas quis augue ac augue gravida placerat eu a ligula. Vestibulum est elit, tristique quis venenatis a.
-          </div>
-          <a class="button is-warning">
-            Ma recette 3
-          </a>
-        </div>
-      </div>
-    </div>
+    <?php endforeach;?>
+  </div>
 </section>
-<section>
-  <div class="columns" style="padding-top: 2%;padding-left: 3%;padding-right: 3%;">
-    <div class="column">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <a href="#"><img src="assets/img/kebab.jpg" alt="kebab"></a>
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">descriptif de la recette</p>
-            </div>
-          </div>
 
-          <div class="content">
-            In vitae augue purus. In ullamcorper interdum vulputate. In ornare velit eros. Maecenas quis augue ac augue gravida placerat eu a ligula. Vestibulum est elit, tristique quis venenatis a.
-          </div>
-          <a class="button is-warning">
-            Ma recette 4
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <a href="#"><img src="assets/img/kebab.jpg" alt="kebab"></a>
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">descriptif de la recette</p>
-            </div>
-          </div>
-
-          <div class="content">
-            In vitae augue purus. In ullamcorper interdum vulputate. In ornare velit eros. Maecenas quis augue ac augue gravida placerat eu a ligula. Vestibulum est elit, tristique quis venenatis a.
-          </div>
-          <a class="button is-warning">
-            Ma recette 5
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <a href="#"><img src="assets/img/kebab.jpg" alt="kebab"></a>
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">descriptif de la recette</p>
-            </div>
-          </div>
-
-          <div class="content">
-            In vitae augue purus. In ullamcorper interdum vulputate. In ornare velit eros. Maecenas quis augue ac augue gravida placerat eu a ligula. Vestibulum est elit, tristique quis venenatis a.
-          </div>
-          <a class="button is-warning">
-            Ma recette 6
-          </a>
-        </div>
-      </div>
-    </div>
-</section>
   <!--[if lte IE 9]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
@@ -168,10 +64,4 @@
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-      window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-      ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>

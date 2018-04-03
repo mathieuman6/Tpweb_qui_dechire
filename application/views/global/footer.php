@@ -1,7 +1,6 @@
 <?php
   defined('BASEPATH') OR exit('No direct script access allowed')
 ?>
-</main>
 <footer>
     <div class="footer_content">
 
@@ -39,4 +38,5 @@
       <p class="pfooter">Responsable de la publication: Mathieu GRIMARD & Dorian ALLOUL, BORDEAUX, FR</p>
     </div>
   </footer>
+  </body>
 </html>
